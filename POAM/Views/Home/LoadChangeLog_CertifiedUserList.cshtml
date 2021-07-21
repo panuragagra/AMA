@@ -1,0 +1,27 @@
+﻿@model IEnumerable<POAM.Models.CertifiedUserList>
+@using NonFactors.Mvc.Grid;
+
+
+
+    @(Html
+                    .Grid(Model)
+                    .Build(columns =>
+                    {
+                        columns.Add(model => model.OfficeName).Titled("Office");
+
+                        columns.Add(model => model.LastName).Titled("Last Name");
+                        columns.Add(model => model.FirstName).Titled("First Name");
+                        columns.Add(model => model.EMail).Titled("E-mail"); //.Formatted("{0:d}");
+            columns.Add(model => model.AccessLevelName).Titled("Access Level");
+                        columns.Add(model => model.LastLoginDate).Titled("Last Login Date");
+                    })
+                    .Empty("No data found")
+                    .Named("LoadChangeLog_CertifiedUserList")                    
+                    .Sortable()
+                    .Pageable(pager =>
+                    {
+                        pager.ShowPageSizes = true;
+                        pager.PagesToDisplay = 5;
+                        pager.RowsPerPage = 10;
+                    })
+    )

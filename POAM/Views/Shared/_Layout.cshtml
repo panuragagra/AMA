@@ -1,0 +1,173 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <link href="~/css/site.css" rel="stylesheet" />
+    <link href="~/Content/MvcGrid/mvc-grid.css" rel="stylesheet">
+    <title>@ViewData["Title"] - AMA</title>
+
+    <environment include="Development">
+        <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
+        <link rel="stylesheet" href="~/css/site.css" />
+    </environment>
+    <environment exclude="Development">
+        <link rel="stylesheet" href="https://ajax.aspnetcdn.com/ajax/bootstrap/3.3.7/css/bootstrap.min.css"
+              asp-fallback-href="~/lib/bootstrap/dist/css/bootstrap.min.css"
+              asp-fallback-test-class="sr-only" asp-fallback-test-property="position" asp-fallback-test-value="absolute" />
+        <link rel="stylesheet" href="~/css/site.min.css" asp-append-version="true" />
+    </environment>
+   
+</head>
+<body>
+    @*<nav class="navbar navbar-inverse navbar-fixed-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a asp-area="" asp-controller="Home" asp-action="Index" class="navbar-brand">POAM</a>
+                </div>
+                <div class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav">
+                        <li><a asp-area="" asp-controller="Home" asp-action="Index">Home</a></li>
+                        <li><a asp-area="" asp-controller="Home" asp-action="About">About</a></li>
+                        <li><a asp-area="" asp-controller="Home" asp-action="Contact">Contact</a></li>
+                    </ul>
+                    <p class="nav navbar-text navbar-right">Hello, @User.Identity.Name!</p>
+                </div>
+            </div>
+        </nav>
+        <div class="container body-content">
+            @RenderBody()
+            <hr />
+            <footer>
+                <p>&copy; 2019 - POAM</p>
+            </footer>
+        </div>*@
+
+    <table style="background: #FFFFFF;width: 100%;min-height:600px;border:1px solid black;max-width:1000px;" cellpadding="0" cellspacing="0" align="Center">
+        <tr style="background-color:#39648D;height:50px;vertical-align:bottom">
+            <td colspan="3" style="height:50px;vertical-align:middle;">
+                <img src="~/images/logo.png" title="Statutory Reports Tracking System logo" alt="U.S. DOT LOGO" class="logo" runat="server" id="imgLogo" />
+            </td>
+        </tr>
+        <tr>
+            <td colspan="3" style="background-color:#9CCEE5;height:20px;">
+                <div style="padding: 3px 10px; color: black; float: right;"><b>Version 1.0.0</b></div>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2" style="color:white;height:50px;vertical-align:middle;background-color:#194178;padding-left:30px;font-size:24px;font-family:Verdana">
+
+                <asp:Panel runat="server" ID="pnlNav">
+                    <a runat="server" id="hplDashboard" href="/home/Index" style="text-decoration: none;font-weight: normal;font-size:13px;color:white"><img width="25" title="Home" align="ABSMIDDLE" src="~/images/home.png" />&nbsp;Home&nbsp;</a>
+                </asp:Panel>
+            </td>
+            <td style="color:white;height:50px;vertical-align:middle;background-color:#194178;font-size:24px;font-family:Verdana">
+                <div style="float:right;vertical-align:bottom">                    
+                    <a runat="server" onclick="javascript: if (confirm('Are you sure you want to Exit?')) { window.location.href = 'http://one10.dot.gov/office/fta/Pages/default.aspx'; }" ID="hplLogout" Style="color:white;text-decoration: none;font-weight: normal;padding-right:20px;font-size:small;cursor: pointer;" NavigateUrl="http://one10.dot.gov/office/fta/Pages/default.aspx"><img title="Sign out" width="25" align="ABSMIDDLE" src="~/images/exit.png" />&nbsp;Exit</a>
+                </div>
+            </td>
+        </tr>
+        <tr style="vertical-align:top">
+            <td colspan="3">
+                <div>
+                    @RenderBody()
+                </div>
+            </td>
+        </tr>
+        <tr class="footer">
+            <td colspan="3">
+                <div style="float:right;align-content:center;color:white;text-align:center;font-weight:normal">
+                    For Technical Support please contact DOT IT Services at 202-385-4357 or 1-866-466-5221.&nbsp;&nbsp;
+                </div>
+            </td>
+        </tr>
+    </table>
+
+    <environment include="Development">
+        <script src="~/lib/jquery/dist/jquery.js"></script>
+        <script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>
+        <script src="~/js/site.js" asp-append-version="true"></script>
+    </environment>
+    <environment exclude="Development">
+        <script src="https://ajax.aspnetcdn.com/ajax/jquery/jquery-2.2.0.min.js"
+                asp-fallback-src="~/lib/jquery/dist/jquery.min.js"
+                asp-fallback-test="window.jQuery"
+                crossorigin="anonymous"
+                integrity="sha384-K+ctZQ+LL8q6tP7I94W+qzQsfRV2a+AfHIi9k8z8l9ggpc8X+Ytst4yBo/hH+8Fk">
+        </script>
+        <script src="https://ajax.aspnetcdn.com/ajax/bootstrap/3.3.7/bootstrap.min.js"
+                asp-fallback-src="~/lib/bootstrap/dist/js/bootstrap.min.js"
+                asp-fallback-test="window.jQuery && window.jQuery.fn && window.jQuery.fn.modal"
+                crossorigin="anonymous"
+                integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa">
+        </script>
+
+
+        <script src="~/js/site.min.js" asp-append-version="true"></script>
+
+
+    </environment>
+
+
+    <script src="~/Scripts/MvcGrid/mvc-grid.js"></script>
+    <script>
+        [].forEach.call(document.getElementsByClassName('mvc-grid'), function (element) {
+            new MvcGrid(element);
+        });
+
+
+
+        //-------------Maintain current cursor scroll position-----------------
+        $(document).scroll(function () {
+            var url = document.URL;
+            if (url.indexOf("?") > -1) {
+                url = url.substr(0, url.indexOf("?"));
+            }
+            localStorage['page'] = url;
+            localStorage['scrollTop'] = $(document).scrollTop();
+        });
+
+        $("input[id='Previous']").click(function () {
+            localStorage['page'] = "";
+        });
+        $("input[id='Next']").click(function () {
+            localStorage['page'] = "";
+        });
+
+        $(document).ready(function () {
+            
+            var url = document.URL;
+            if (url.indexOf("?") > -1) {
+                url = url.substr(0, url.indexOf("?"));
+            }
+            if (localStorage['page'] == url) {
+                $(document).scrollTop(localStorage['scrollTop']+20);
+                //localStorage['page'] = "";
+            }
+            else {
+                //   ResetLocalstorage();
+            }
+        });
+
+        function ResetLocalstorage() {
+            if (localStorage['page'] != "") {
+                if (document.URL.indexOf("ResetAllValues") >= 0) {
+                    localStorage['page'] = "";
+                    localStorage['scrollTop'] = "";
+                }
+            }
+        }
+        //-------------END Maintain current cursor scroll position-----------------
+    </script>
+
+    @RenderSection("Scripts", required: false)
+</body>
+</html>

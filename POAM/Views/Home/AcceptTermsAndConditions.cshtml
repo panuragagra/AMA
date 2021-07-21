@@ -1,0 +1,135 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+    <title>Accept And Terms</title>
+    <link href="~/css/site.css" rel="stylesheet" />
+    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+
+    <link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/themes/smoothness/jquery-ui.min.css" rel="stylesheet" type="text/css" />
+
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+
+    <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
+
+</head>
+<body>
+    <div>
+        <table style="background: #FFFFFF;width: 100%;min-height:540px;border:1px solid black;max-width:1000px;" cellpadding="0" cellspacing="0" align="Center">
+            <tr style="background-color:#39648D;height:50px;vertical-align:bottom">
+                <td colspan="2" style="height:50px;vertical-align:middle;">
+                    <img src="~/images/logo.png" title="U.S. Department of Transportation. Federal Transit Administration" alt="U.S. DOT LOGO" class="logo" runat="server" id="imgLogo" />
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2" style="background-color:#9CCEE5">
+                    <div style="padding:10px 10px; color: black; float: right;"><b>Version 1.0.0</b></div>
+                </td>
+            </tr>
+            <tr style="vertical-align:top">
+                <td>
+                    <br /><br />
+                    <table class="solid" cellspacing="0" cellpadding="3" width="90%" style="background-color: #DEDEDE;" align="center" border="0">
+                        <tr style="height: 40px;">
+                            <td colspan="2">
+                                <h1 align="center">Welcome to Account Management Application </h1>
+                            </td>
+                        </tr>
+                        <tr style="background:white">
+                            <td style="padding: 10px;">
+                                <h2 align="center">Attention: Terms of Use</h2>
+                                <p class="bannerWarning">
+                                    You are accessing a U.S. Government information system, which includes this computer, the computer network on which it is connected, all other computers connected to this network, and all storage media connected to this computer or other computers on this network.
+                                </p>
+                                <p class="bannerWarning">
+                                    This information system is provided for U.S Government use only. Unauthorized or improper use of this information may result in disciplinary action, as well as civil and criminal penalties. By using this information system you consent to the following:
+                                </p>
+                                <p class="bannerWarning">
+                                    <ul style="list-style: lower-alpha;">
+                                        <li class="listspacing">
+                                            You have no reasonable expectation of privacy regarding any communications or data transiting this network, stored on, or traveling to or from this information system;
+                                        </li>
+                                        <li class="listspacing">
+                                            At any time, and for any lawful government purpose, the government may monitor, intercept, search and seize any communication or data transiting this network, stored on, or traveling to or from this information system; and
+                                        </li>
+                                        <li class="listspacing">
+                                            Any communication or data transiting this network, stored on, or traveling to or from this information system may be disclosed or used for any lawful government purpose.
+                                        </li>
+                                    </ul>
+                                </p>
+                                <span class="listspacing">Click button: "I accept these terms" to consent to these terms of use.</span>
+                            </td>
+                        </tr>
+                        <tr style="background:white">
+                            <td style="text-align:center">
+
+                                <input type="submit" ID="ButtonIaccept" style="margin-left:20px;" Class="buttonGreen" Font-Bold="true" value="I accept these terms" ToolTip="I accept these terms">
+                                <input type="button" ID="Button2" style="margin-left:20px;" Visible="true" Class="buttonRed" Font-Bold="true" runat="server" ToolTip="I do not accept these terms" value="I do not accept these terms" OnClick="window.location.href ='http://one10.dot.gov/office/fta/Pages/default.aspx'">
+
+                            </td>
+                        </tr>
+                    </table><br />
+                </td>
+            </tr>
+        </table>
+    </div>
+
+    <script type="text/javascript">
+
+  
+       function Testing()
+       {
+           //"http://one10.dot.gov/office/fta/Pages/default.aspx"
+
+           alert('hi');
+
+           $.ajax({
+               type: "POST",
+               url: "/Controller/Action", // the URL of the controller action method
+               data: null, // optional data
+               success: function (result) {
+                   // do something with result
+               },
+               success: function (result, para) {
+                   if (para == 'something') {
+                       //run JavaScript function
+                   }
+               },
+               error: function (req, status, error) {
+                   // do something with error   
+               }
+           });
+
+        }
+
+        $(document).ready(function () {
+
+            $('#ButtonIaccept').click(function () {
+
+                $.ajax({
+                    url: "AcceptTermsAndConditions",
+                    type: "POST",
+                    data: { AcceptAndTerms: 'true' },
+                    cache: false,
+                    async: true,
+                    success: function (data) {
+                        window.location.href = "/Home/Index";
+                    },
+                    error: function (req, status, error) {
+                        alert('error');
+                    }
+                });
+            });
+        }
+        )
+    </script>
+</body>
+
+
+</html>

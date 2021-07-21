@@ -1,0 +1,452 @@
+﻿body {
+    font-size: 12px;
+    margin: 10px;
+    color: #000000;
+    font-family: Verdana;
+    BACKGROUND-color: #ffffff
+}
+.popover {
+    max-width: 600px !important;
+    width: 400px !important;
+}
+
+input.button {
+    border-width: 0px;
+    border-color: #666666;
+    font-size: 13px;
+    color: #ffffff;
+    font-family: Verdana;
+    font-weight: normal;
+    background-color: #547B9D;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+input.buttonGreen {
+    border-width: 2px;
+    font-size: 13px;
+    font-family: Verdana;
+    font-weight: normal;
+    background-color: #428BCA;
+    border-color: #428BCA;
+    color: white;
+    border-radius: 5px;
+    padding: 8px;
+    border-style:solid;
+    margin:5px;
+}
+
+    input.buttonGreen:hover {
+        border-color: white;
+    }
+
+input.buttonRed:hover {
+    border-color:white;
+}
+
+input.buttonRed {
+    border-width: 2px;
+    background-color: #D9534F;
+    border-style: solid;
+    border-color: #D9534F;
+    color: white;
+    font-size: 13px;
+    font-family: Verdana;
+    font-weight: normal;
+    border-radius: 5px;
+    padding: 8px;
+    margin: 5px;
+}
+
+
+    input.button:hover {
+        background-color:grey;
+        border-color: black;
+        color:black;
+    }
+h1 {
+    color: #194178;
+    font-family: "Trebuchet MS","Lucida Grande","Lucida Sans Unicode","Lucida Sans",Tahoma,sans-serif;
+    font-size: 1.854em;
+    font-weight: 100;
+    margin-bottom: 10px;
+    line-height: 1.2em;
+}
+
+h2 {
+    color: #194178;
+    font-family: "Trebuchet MS","Lucida Grande","Lucida Sans Unicode","Lucida Sans",Tahoma,sans-serif;
+    font-size: 1.554em;
+    font-weight: 100;
+    margin-bottom: 10px;
+    line-height: 1.2em;
+}
+
+
+.logo {
+    padding: 20px;
+    width: 350px
+}
+.solid {
+    border: 1px darkGrey solid;
+    background: white;
+    border-radius: 10px;
+}
+
+.footer {
+    background-color: #194178;
+    height: 30px;
+    vertical-align: middle;
+    border: 0px;
+}
+
+.mainTable {
+    background: #FFFFFF;
+    width: 100%;
+    min-height: 600px;
+    border: 1px solid black;
+    max-width: 1000px;
+    padding: 0px;
+    border-collapse: collapse;
+    align-content:center;
+}
+
+.hyperlink {
+    color: #FFFFFF;
+    font-weight:bold;
+    font-size:15px;
+    text-decoration:underline;
+}
+
+.hyperlinkSignout {
+    color: #FFFFFF;
+    font-weight: bold;
+    font-size: 15px;
+    text-decoration: none;
+}
+.user {
+    font-weight: bold;
+    font-size: 14px;
+    font-family: Verdana;
+    width: 250px;
+    height: 50px;
+    border: solid gray 1px;
+    border-radius: 10px;
+    padding: 5px;
+    background-clip: padding-box;
+    background: #fcfcfc;
+}
+
+input[type=text], select, textarea {
+    width: 200px;
+    padding: 12px 20px;
+    margin: 0px 0;
+    font-size:12px;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-family: Verdana !important;
+}
+
+li {
+    font-family: Verdana !important;
+}
+
+label {
+    font-weight: bold;
+    font-family: Verdana !important;
+    padding-left:5px;
+    font-size:12px !important;
+}
+
+.readonly
+{
+    background:#E1E1E1;
+}
+
+.required
+{
+    color:orangered;
+}
+
+
+/*  bhoechie tab */
+div.bhoechie-tab-container {
+    z-index: 10;
+    background-color: #ffffff;
+    padding: 0 !important;
+    border-radius: 4px;
+    -moz-border-radius: 4px;
+    border: 1px solid #ddd;
+    margin-top: 20px;
+    margin-left: 50px;
+    -webkit-box-shadow: 0 6px 12px rgba(0,0,0,.175);
+    box-shadow: 0 6px 12px rgba(0,0,0,.175);
+    -moz-box-shadow: 0 6px 12px rgba(0,0,0,.175);
+    background-clip: padding-box;
+    opacity: 0.97;
+    filter: alpha(opacity=97);
+}
+
+div.bhoechie-tab-menu {
+    padding-right: 0;
+    padding-left: 0;
+    padding-bottom: 0;
+}
+
+    div.bhoechie-tab-menu div.list-group {
+        margin-bottom: 0;
+    }
+
+        div.bhoechie-tab-menu div.list-group > a {
+            margin-bottom: 0;
+        }
+
+            div.bhoechie-tab-menu div.list-group > a .glyphicon,
+            div.bhoechie-tab-menu div.list-group > a .fa {
+                color: #5A55A3;
+            }
+
+            div.bhoechie-tab-menu div.list-group > a:first-child {
+                border-top-right-radius: 0;
+                -moz-border-top-right-radius: 0;
+            }
+
+            div.bhoechie-tab-menu div.list-group > a:last-child {
+                border-bottom-right-radius: 0;
+                -moz-border-bottom-right-radius: 0;
+            }
+
+            div.bhoechie-tab-menu div.list-group > a.active,
+            div.bhoechie-tab-menu div.list-group > a.active .glyphicon,
+            div.bhoechie-tab-menu div.list-group > a.active .fa {
+                background-color: #5A55A3;
+                background-image: #5A55A3;
+                color: #ffffff;
+            }
+
+                div.bhoechie-tab-menu div.list-group > a.active:after {
+                    content: '';
+                    position: absolute;
+                    left: 100%;
+                    top: 50%;
+                    margin-top: -13px;
+                    border-left: 0;
+                    border-bottom: 13px solid transparent;
+                    border-top: 13px solid transparent;
+                    border-left: 10px solid #5A55A3;
+                }
+
+div.bhoechie-tab-content {
+    background-color: #ffffff;
+    /* border: 1px solid #eeeeee; */
+    padding-left: 20px;
+    padding-top: 10px;
+}
+
+div.bhoechie-tab div.bhoechie-tab-content:not(.active) {
+    display: none;
+}
+
+.GridStyle
+{
+    font-size:12px;
+}
+
+div.bhoechie-tab-menu div.list-group > a.active, div.bhoechie-tab-menu div.list-group > a.active .glyphicon, div.bhoechie-tab-menu div.list-group > a.active .fa {
+    /* background:lightblue;*/
+}
+
+a{
+    text-decoration:none;
+}
+
+h3 {
+    color: #194178;
+    font-family: "Trebuchet MS","Lucida Grande","Lucida Sans Unicode","Lucida Sans",Tahoma,sans-serif;
+    font-size: 1.254em;
+    font-weight: 100;
+    margin-bottom: 10px;
+    line-height: 1.2em;
+}
+
+.form-control
+{
+    font-size:12px !important;
+}
+
+.padding50
+{
+    padding-left:10px;
+}
+
+h4 {
+    font-family: "Trebuchet MS","Lucida Grande","Lucida Sans Unicode","Lucida Sans",Tahoma,sans-serif;
+}
+.breadcrumb {
+    /*centering*/
+    display: inline-block;
+    box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.35);
+    overflow: hidden;
+    border-radius: 5px;
+    /*Lets add the numbers for each link using CSS counters. flag is the name of the counter. to be defined using counter-reset in the parent element of the links*/
+    counter-reset: flag;
+}
+
+    .breadcrumb a {
+        text-decoration: none;
+        outline: none;
+        display: block;
+        float: left;
+        font-size: 12px;
+        line-height: 36px;
+        color: white;
+        /*need more margin on the left of links to accomodate the numbers*/
+        padding: 0 10px 0 30px;
+        background: #666;
+        background: linear-gradient(#666, #333);
+        position: relative;
+    }
+        /*since the first link does not have a triangle before it we can reduce the left padding to make it look consistent with other links*/
+        .breadcrumb a:first-child {
+            padding-left: 46px;
+            border-radius: 5px 0 0 5px; /*to match with the parent's radius*/
+        }
+
+            .breadcrumb a:first-child:before {
+                left: 14px;
+            }
+
+        .breadcrumb a:last-child {
+            border-radius: 0 5px 5px 0; /*this was to prevent glitches on hover*/
+            padding-right: 20px;
+        }
+
+        /*hover/active styles*/
+        .breadcrumb a.active, .breadcrumb a:hover {
+            
+        }
+
+            .breadcrumb a.active:after, .breadcrumb a:hover:after {
+               
+            }
+
+        /*adding the arrows for the breadcrumbs using rotated pseudo elements*/
+        .breadcrumb a:after {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: -18px; /*half of square's length*/
+            /*same dimension as the line-height of .breadcrumb a */
+            width: 36px;
+            height: 36px;
+            /*as you see the rotated square takes a larger height. which makes it tough to position it properly. So we are going to scale it down so that the diagonals become equal to the line-height of the link. We scale it to 70.7% because if square's: 
+	length = 1; diagonal = (1^2 + 1^2)^0.5 = 1.414 (pythagoras theorem)
+	if diagonal required = 1; length = 1/1.414 = 0.707*/
+            transform: scale(0.707) rotate(45deg);
+            /*we need to prevent the arrows from getting buried under the next link*/
+            z-index: 1;
+            /*background same as links but the gradient will be rotated to compensate with the transform applied*/
+            background: #666;
+            background: linear-gradient(135deg, #666, #333);
+            /*stylish arrow design using box shadow*/
+            box-shadow: 2px -2px 0 2px rgba(0, 0, 0, 0.4), 3px -3px 0 2px rgba(255, 255, 255, 0.1);
+            /*
+		5px - for rounded arrows and 
+		50px - to prevent hover glitches on the border created using shadows*/
+            border-radius: 0 5px 0 50px;
+        }
+        /*we dont need an arrow after the last link*/
+        .breadcrumb a:last-child:after {
+            content: none;
+        }
+        
+
+
+.flat a, .flat a:after {
+    background: #E1E1E1;
+    color: black;
+    transition: all 0.5s;
+}
+
+    .flat a:before {
+        background: white;
+        box-shadow: 0 0 0 1px #ccc;
+    }
+
+     .flat a.active,
+     .flat a.active:after {
+        background: #428BCA;
+        color:white;
+    }
+
+    .flat a.current,
+    flat a.current:after, .flat a.current:after {
+        background: Orange;
+        font-weight:bold;
+    }
+
+
+.pager span
+{
+    font-weight:bold;
+}
+
+
+.pagination a {
+    text-decoration: underline;
+}
+
+/* Style the tab */
+.bstab {
+    overflow: hidden;
+    border: 1px solid #ccc;
+    background-color: #194178;
+}
+
+    /* Style the buttons inside the tab */
+    .bstab a {
+        background-color: inherit;
+        float: left;
+        border: none;
+        outline: none;
+        cursor: pointer;
+        padding: 14px 16px;
+        transition: 0.3s;
+        font-size: 13px;
+        font-weight:bold;
+    }
+
+        /* Change background color of buttons on hover */
+.bstab button:hover {
+    background-color: #ddd;
+}
+
+        /* Create an active/current tablink class */
+.bstablinksactive {
+    background-color: #9CCEE5 !important;
+    color: black !important;
+    font-size: 12px;
+}
+
+.bstablinks {
+    color: white !important;
+}
+/* Style the tab content */
+.bstabcontent {
+    display: none;
+    padding: 6px 12px;
+    border: 1px solid #ccc;
+    border-top: none;
+}
+
+.applied {
+    color: red !important;
+	font-size:14px !important;
+}
+
+.mvc-grid-filter
+{
+	font-size:14px !important;
+}

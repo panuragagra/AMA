@@ -1,0 +1,48 @@
+pipeline {
+    agent {
+      label "FTA-WebAppsAgentRHEL1"
+    }
+    stages {
+      stage("Check for msbuild") {
+        steps {
+        withDotNet(sdk: ".NET 5.0") {
+          	echo 'Building..'
+		  	sh(script: "dotnet build POAM.sln -c Release ", returnStdout: true)
+          }
+        }
+        post {
+          always {
+            echo '========always========'
+          }
+          success {
+            echo '========MSbuild installed========'
+            echo '========++++moving on++++========'
+          }
+          failure {
+            echo '========MSbuild check failed========'
+            echo '====++++Make sure msbuild path is correct++++===='
+            echo '====++++MSbuild should be on the path as msbuild not msbuild.exe++++===='
+            echo '====++++check the build node you are on...As a last resort contact a Devops toolchian admin.++++===='
+          }
+          changed {
+            echo 'Things were different before...'
+          }
+        }
+      }
+	  stage("Code Scan") {
+      environment {
+                scannerHome = tool 'FTA-GSS-CUT-Sonar'
+            }
+        steps {
+        withDotNet(sdk: ".NET 5.0") {
+            withSonarQubeEnv('FTA-SonarQube') {
+                echo 'Code analysis..'
+                sh "dotnet ${scannerHome}/SonarScanner.MSBuild.dll begin /k:DOT-FTA-AMA/d:sonar.host.url=http://10.75.142.85:9000 /d:sonar.login=42b55bc0a79f149306193de727efcaa3d875508d"
+                sh "dotnet build"
+                sh "dotnet ${scannerHome}/SonarScanner.MSBuild.dll end /d:sonar.login=42b55bc0a79f149306193de727efcaa3d875508d"
+              }
+            }
+        }
+		}
+}
+}
